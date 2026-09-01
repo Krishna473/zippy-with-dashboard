@@ -1,0 +1,131 @@
+
+
+  /* Styles used only by Dashboard.jsx. Reuses the app's existing color/spacing
+   feel but doesn't touch index.css, so nothing else in the app is affected. */
+
+.dash-hero {
+  border-radius: 14px;
+  border: 1px solid var(--zzc-border, #e5e7eb);
+  background: linear-gradient(135deg, rgba(16, 158, 144, 0.08) 0%, rgba(240, 166, 62, 0.08) 100%);
+  padding: 20px 24px;
+  margin-bottom: 16px;
+}
+.dash-hero-title { font-size: 18px; font-weight: 600; margin-bottom: 6px; }
+.dash-hero-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
+.dash-export-btn { height: 32px; padding: 0 10px; font-size: 13px; }
+
+.dash-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+@media (min-width: 640px) { .dash-kpi-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1024px) { .dash-kpi-grid { grid-template-columns: repeat(6, 1fr); } }
+
+.dash-kpi-card {
+  border-radius: 14px;
+  border: 1px solid var(--zzc-border, #e5e7eb);
+  background: #fff;
+  padding: 14px 16px;
+}
+
+.dash-kpi-card.highlight { background: oklch(52% .105 185); border-color: #0f9d8f; }
+.dash-kpi-label { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: .03em; color: #6b7280; }
+.dash-kpi-card.highlight .dash-kpi-label { color: rgba(255,255,255,0.8); }
+.dash-kpi-value { font-size: 18px; font-weight: 600; margin: 4px 0 2px; }
+.dash-kpi-card.highlight .dash-kpi-value { color: #fff; }
+.dash-kpi-sub { font-size: 12px; color: #6b7280; }
+.dash-kpi-card.highlight .dash-kpi-sub { color: rgba(255,255,255,0.75); }
+
+.dash-panel {
+  border-radius: 14px;
+  border: 1px solid var(--zzc-border, #e5e7eb);
+  background: #fff;
+  padding: 16px 20px 20px;
+  margin-bottom: 16px;
+}
+.dash-panel-wide { grid-column: 1 / -1; }
+.dash-panel-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 10px; }
+.dash-panel-title { font-size: 14px; font-weight: 600; margin: 0; }
+
+.dash-error {
+  background: #fee2e2;
+  color: #991b1b;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.dash-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+@media (min-width: 900px) { .dash-grid { grid-template-columns: 1fr 1fr; } }
+.dash-grid .dash-panel { margin-bottom: 0; }
+
+/* Vertical bars */
+.dash-vbars { display: flex; align-items: flex-end; gap: 10px; height: 180px; padding-top: 10px; }
+.dash-vbar-col { flex: 1; display: flex; flex-direction: column; align-items: center; height: 100%; }
+.dash-vbar-track { flex: 1; width: 100%; display: flex; align-items: flex-end; background: #f4f4f5; border-radius: 6px 6px 0 0; overflow: hidden; }
+.dash-vbar-fill { width: 100%; border-radius: 6px 6px 0 0; min-height: 2px; transition: height .2s ease; }
+.dash-vbar-value { font-size: 12px; font-weight: 600; margin-top: 6px; }
+.dash-vbar-label { font-size: 10px; color: #6b7280; text-align: center; margin-top: 2px; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* Horizontal bars */
+.dash-hbars { display: flex; flex-direction: column; gap: 10px; }
+.dash-hbar-row { display: grid; grid-template-columns: 110px 1fr 70px; align-items: center; gap: 8px; }
+.dash-hbar-label { font-size: 11px; color: #374151; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.dash-hbar-track { height: 14px; background: #f4f4f5; border-radius: 999px; overflow: hidden; }
+.dash-hbar-fill { height: 100%; border-radius: 999px; min-width: 2px; }
+.dash-hbar-value { font-size: 12px; font-weight: 600; text-align: right; }
+
+/* Grouped bars */
+.dash-grouped { display: flex; align-items: flex-end; gap: 16px; height: 180px; padding-top: 10px; }
+.dash-grouped-col { flex: 1; display: flex; flex-direction: column; align-items: center; height: 100%; }
+.dash-grouped-bars { flex: 1; width: 100%; display: flex; align-items: flex-end; gap: 4px; }
+.dash-grouped-track { flex: 1; height: 100%; display: flex; align-items: flex-end; background: #f4f4f5; border-radius: 4px 4px 0 0; overflow: hidden; }
+.dash-grouped-fill { width: 100%; border-radius: 4px 4px 0 0; min-height: 2px; }
+
+.dash-legend { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 12px; font-size: 12px; }
+.dash-legend-item { display: flex; align-items: center; gap: 6px; color: #374151; }
+.dash-legend-dot { width: 8px; height: 8px; border-radius: 999px; display: inline-block; }
+
+/* Pie */
+.dash-pie-wrap { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.dash-pie { width: 140px; height: 140px; border-radius: 999px; flex-shrink: 0; }
+.dash-legend-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; font-size: 13px; }
+.dash-legend-list li { display: flex; align-items: center; }
+.dash-legend-list .dash-legend-dot { margin-right: 8px; }
+
+/* Drill-down explorer: breadcrumb, clickable rows, two-column store detail */
+.dash-breadcrumb { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.dash-crumb {
+  border: 1px solid var(--zzc-border, #e5e7eb);
+  background: #fff;
+  color: #374151;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.dash-crumb.active { background: oklch(52% .105 185); border-color: #0f9d8f; color: #fff; font-weight: 600; }
+.dash-crumb-sep { color: #9ca3af; font-size: 13px; }
+
+.dash-panel-subheader { display: flex; align-items: center; justify-content: space-between; margin: 12px 0 8px; }
+
+.dash-drill-row { cursor: pointer; }
+.dash-drill-row:hover { background: #f4f4f5; }
+
+.dash-store-detail-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+@media (min-width: 900px) { .dash-store-detail-grid { grid-template-columns: 1fr 1fr; } }
+
+.dash-drill-note { font-size: 11px; margin-top: 14px; line-height: 1.5; }
+
+/* Stacked month bars */
+.dash-stacked { display: flex; flex-direction: column; gap: 8px; }
+.dash-stacked-row { display: grid; grid-template-columns: 70px 1fr 90px; align-items: center; gap: 8px; }
+.dash-stacked-track { height: 16px; background: #f4f4f5; border-radius: 4px; overflow: hidden; display: flex; }
+.dash-stacked-seg { height: 100%; min-width: 1px; }

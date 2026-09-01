@@ -1,0 +1,18 @@
+/* Disabled/inactive look for Bulk Tools action buttons.
+   index.css defines the enabled (solid teal) state but has no :disabled
+   rule, so buttons rendered as `disabled` still looked fully active. This
+   file only adds the missing dimmed/inactive state on top of that. */
+
+.bulk-primary-btn:disabled,
+.bulk-secondary-btn:disabled,
+.bulk-tab:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  filter: saturate(0.6);
+}
+
+.bulk-primary-btn:disabled:hover,
+.bulk-secondary-btn:disabled:hover,
+.bulk-tab:disabled:hover {
+  background: inherit;
+}
